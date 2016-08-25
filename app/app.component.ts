@@ -19,19 +19,20 @@ export class AppComponent {
   public restaurant: Restaurant[];
   constructor() {
     this.restaurant = [
-      new Restaurant("Miller",2013, "rock", 21, 0),
-      new Restaurant("Guiness",2013, "rock", 21, 1),
-      new Restaurant("Shocktop",2013, "rock", 21, 2),
-      new Restaurant("Ocktoberfest",2013, "rap", 21, 3),
-      new Restaurant("Corona",2013, "pop", 21, 4)
+      new Restaurant("Parl",2060000000, "Pine st,Seattle", 21, "Good",0),
+      new Restaurant("Jade Dragnon",2060000000, "Pike st,Seattle", 21, "Good",1),
+      new Restaurant("Panda",2060000000, "University st,Seattle", 21, "Good",2),
+      new Restaurant("Sichuan Cousine",2060000000, "Pike st", 21, "Good",3),
+      new Restaurant("KFC",2060000000, "Bell st", 21, "Good",4)
     ];
   }
   createRestaurant(RestaurantDetail:string[]):void{
-    var tempYear : number = parseInt(RestaurantDetail[1]);
+    var tempPhone : number = parseInt(RestaurantDetail[1]);
     var tempPrice : number = parseInt(RestaurantDetail[3]);
+    var tempRating : number = parseInt(RestaurantDetail[3]);
 
     this.restaurant.push(
-       new Restaurant(RestaurantDetail[0], tempYear, RestaurantDetail[2], tempPrice, this.restaurant.length)
+       new Restaurant(RestaurantDetail[0], tempPhone, RestaurantDetail[2], tempPrice, this.restaurant.length)
      );
   }
 
