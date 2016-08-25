@@ -13,13 +13,15 @@ export class addRestaurantComponent{
  constructor(){
   this.onSubmitNewRestaurant =new EventEmitter();
 }
-addRestaurant(artist:HTMLInputElement,year:HTMLInputElement,genre:HTMLInputElement,price:HTMLInputElement){
-  var newRestaurantArray: string[] = [artist.value, year.value, genre.value,price.value];
+addRestaurant(name:HTMLInputElement,phoneNumber:HTMLInputElement,address:HTMLInputElement,price:HTMLInputElement,review:HTMLInputElement,rating:HTMLInputElement){
+  var newRestaurantArray: string[] = [name.value, phoneNumber.value, address.value,price.value,review.value,rating.value];
   this.onSubmitNewRestaurant.emit(newRestaurantArray);
-  artist.value = "";
-  year.value = "";
-  genre.value = "";
+  name.value = "";
+  phoneNumber.value = "";
+  address.value = "";
   price.value = "";
+  review.value = "";
+  rating.value = "";
 
 }
 }

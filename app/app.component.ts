@@ -29,10 +29,10 @@ export class AppComponent {
   createRestaurant(RestaurantDetail:string[]):void{
     var tempPhone : number = parseInt(RestaurantDetail[1]);
     var tempPrice : number = parseInt(RestaurantDetail[3]);
-    var tempRating : number = parseInt(RestaurantDetail[3]);
+    var tempRating : number = parseInt(RestaurantDetail[5]);
 
     this.restaurant.push(
-       new Restaurant(RestaurantDetail[0], tempPhone, RestaurantDetail[2], tempPrice, this.restaurant.length)
+       new Restaurant(RestaurantDetail[0], tempPhone, RestaurantDetail[2], tempPrice, RestaurantDetail[4],this.restaurant.length,tempRating)
      );
   }
 
