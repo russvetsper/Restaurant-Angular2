@@ -1,37 +1,37 @@
 import { Component, EventEmitter } from 'angular2/core';
-import { Music } from './music.model'
-import { MusicListComponent } from './music-list.component'
-import { addMusicComponent } from './new-music.component'
+import { Restaurant } from './restaurant.model'
+import { RestaurantListComponent } from './restaurant-list.component'
+import { addRestaurantComponent } from './new-restaurant.component'
 @Component({
   selector: 'my-app',
-  directives:[MusicListComponent,addMusicComponent],
+  directives:[RestaurantListComponent,addRestaurantComponent],
   template: `
     <div class="container">
-      <h1>Music Inventory</h1>
-      <h2>Add New Music Now</h2>
-      <music-list [MusicList]="music"></music-list>
-      <add-music (onSubmitNewMusic)="createMusic($event)"></add-music>
+      <h1>Restaurant Inventory</h1>
+      <h2>Add New Restaurant Now</h2>
+      <restaurant-list [RestaurantList]="restaurant"></restaurant-list>
+      <add-restaurant (onSubmitNewRestaurant)="createRestaurant($event)"></add-restaurant>
 
     </div>
   `
 })
 export class AppComponent {
-  public music: Music[];
+  public restaurant: Restaurant[];
   constructor() {
-    this.music = [
-      new Music("Miller",2013, "rock", 21, 0),
-      new Music("Guiness",2013, "rock", 21, 1),
-      new Music("Shocktop",2013, "rock", 21, 2),
-      new Music("Ocktoberfest",2013, "rap", 21, 3),
-      new Music("Corona",2013, "pop", 21, 4)
+    this.restaurant = [
+      new Restaurant("Miller",2013, "rock", 21, 0),
+      new Restaurant("Guiness",2013, "rock", 21, 1),
+      new Restaurant("Shocktop",2013, "rock", 21, 2),
+      new Restaurant("Ocktoberfest",2013, "rap", 21, 3),
+      new Restaurant("Corona",2013, "pop", 21, 4)
     ];
   }
-  createMusic(MusicDetail:string[]):void{
-    var tempYear : number = parseInt(MusicDetail[1]);
-    var tempPrice : number = parseInt(MusicDetail[3]);
+  createRestaurant(RestaurantDetail:string[]):void{
+    var tempYear : number = parseInt(RestaurantDetail[1]);
+    var tempPrice : number = parseInt(RestaurantDetail[3]);
 
-    this.music.push(
-       new Music(MusicDetail[0], tempYear, MusicDetail[2], tempPrice, this.music.length)
+    this.restaurant.push(
+       new Restaurant(RestaurantDetail[0], tempYear, RestaurantDetail[2], tempPrice, this.restaurant.length)
      );
   }
 
